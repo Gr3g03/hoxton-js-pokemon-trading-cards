@@ -24,11 +24,13 @@ const foundPokemons = data.filter(function (data) {
 
 
   const pokemonDescription = data.map(function (descript) {
-    return descript.stats[0]
+    return descript.stats
   })
 
+ 
 
-function createPokemonCard(name, pokemonSrc, description ){
+
+function firstPokemonCard(name, pokemonSrc, description ){
     const liEl = document.createElement("li")
     liEl.setAttribute("class", "card")
 
@@ -43,19 +45,136 @@ function createPokemonCard(name, pokemonSrc, description ){
 
     const ulEl = document.createElement("ul")
     ulEl.setAttribute("class", "Card--text")
+    description = ulEl.textContent = pokemonDescription[0]
+
+
+    liEl.append(h2El, imgEl, ulEl)
+    const cardEl = document.querySelector('.cards')
+    cardEl.append(liEl)
+}
+
+
+function secondPokemonCard(name, pokemonSrc, description ){
+    const liEl = document.createElement("li")
+    liEl.setAttribute("class", "card")
+
+    const h2El = document.createElement("h2")
+    h2El.setAttribute("class", "card--title")
+    name = h2El.textContent = foundPokemons[1].name
+
+    const imgEl = document.createElement("img")
+    pokemonSrc = imgEl.setAttribute("src", pokemonImg[1])
+    imgEl.setAttribute("class", "card--img")
+    imgEl.setAttribute("width", "256px")
+
+    const ulEl = document.createElement("ul")
+    ulEl.setAttribute("class", "Card--text")
     description = ulEl.textContent = pokemonDescription[1]
 
 
     liEl.append(h2El, imgEl, ulEl)
     const cardEl = document.querySelector('.cards')
     cardEl.append(liEl)
-
-
 }
 
-createPokemonCard( foundPokemons[1].name, pokemonImg[2], pokemonDescription[1] )
-createPokemonCard( foundPokemons[1].name, pokemonImg[2], pokemonDescription[1] )
-createPokemonCard( foundPokemons[1].name, pokemonImg[2], pokemonDescription[1] )
-createPokemonCard( foundPokemons[1].name, pokemonImg[2], pokemonDescription[1] )
 
+function thirdPokemonCard(name, pokemonSrc, description ){
+    const liEl = document.createElement("li")
+    liEl.setAttribute("class", "card")
+
+    const h2El = document.createElement("h2")
+    h2El.setAttribute("class", "card--title")
+    name = h2El.textContent = foundPokemons[3].name
+
+    const imgEl = document.createElement("img")
+    pokemonSrc = imgEl.setAttribute("src", pokemonImg[3])
+    imgEl.setAttribute("class", "card--img")
+    imgEl.setAttribute("width", "256px")
+
+    const ulEl = document.createElement("ul")
+    ulEl.setAttribute("class", "Card--text")
+    description = ulEl.textContent = pokemonDescription[3]
+
+
+    liEl.append(h2El, imgEl, ulEl)
+    const cardEl = document.querySelector('.cards')
+    cardEl.append(liEl)
+}
+
+
+function fourthPokemonCard(name, pokemonSrc, description ){
+    const liEl = document.createElement("li")
+    liEl.setAttribute("class", "card")
+
+    const h2El = document.createElement("h2")
+    h2El.setAttribute("class", "card--title")
+    name = h2El.textContent = foundPokemons[4].name
+
+    const imgEl = document.createElement("img")
+    pokemonSrc = imgEl.setAttribute("src", pokemonImg[4])
+    imgEl.setAttribute("class", "card--img")
+    imgEl.setAttribute("width", "256px")
+
+    const ulEl = document.createElement("ul")
+    ulEl.setAttribute("class", "Card--text")
+    description = ulEl.textContent = pokemonDescription[4]
+
+
+    liEl.append(h2El, imgEl, ulEl)
+    const cardEl = document.querySelector('.cards')
+    cardEl.append(liEl)
+}
+
+function fifthPokemonCard(name, pokemonSrc, description ){
+    const liEl = document.createElement("li")
+    liEl.setAttribute("class", "card")
+
+    const h2El = document.createElement("h2")
+    h2El.setAttribute("class", "card--title")
+    name = h2El.textContent = foundPokemons[5].name
+
+    const imgEl = document.createElement("img")
+    pokemonSrc = imgEl.setAttribute("src", pokemonImg[5])
+    imgEl.setAttribute("class", "card--img")
+    imgEl.setAttribute("width", "256px")
+
+    const ulEl = document.createElement("ul")
+    ulEl.setAttribute("class", "Card--text")
+    description = ulEl.textContent = pokemonDescription[5]
+
+
+    liEl.append(h2El, imgEl, ulEl)
+    const cardEl = document.querySelector('.cards')
+    cardEl.append(liEl)
+}
+
+function sixthPokemonCard(name, pokemonSrc, description ){
+    const liEl = document.createElement("li")
+    liEl.setAttribute("class", "card")
+
+    const h2El = document.createElement("h2")
+    h2El.setAttribute("class", "card--title")
+    name = h2El.textContent = foundPokemons[6].name
+
+    const imgEl = document.createElement("img")
+    pokemonSrc = imgEl.setAttribute("src", pokemonImg[6])
+    imgEl.setAttribute("class", "card--img")
+    imgEl.setAttribute("width", "256px")
+
+    const ulEl = document.createElement("ul")
+    ulEl.setAttribute("class", "Card--text")
+    description = ulEl.textContent = pokemonDescription[6]
+
+
+    liEl.append(h2El, imgEl, ulEl)
+    const cardEl = document.querySelector('.cards')
+    cardEl.append(liEl)
+}
+
+firstPokemonCard()
+secondPokemonCard()
+thirdPokemonCard()
+fourthPokemonCard()
+fifthPokemonCard()
+sixthPokemonCard()
 
