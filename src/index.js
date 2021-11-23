@@ -13,52 +13,49 @@
 // console.log(data);
 
 
-const foundUsers = data.filter(function (data) {
+const foundPokemons = data.filter(function (data) {
     return data.name
   })
 
 
+  const pokemonImg= data.map(function(img){
+      return img.sprites.back_default
+  } )
 
 
-function createPokemonCard(name, src, description ){
+  const pokemonDescription = data.map(function (descript) {
+    return descript.stats[0]
+  })
+
+
+function createPokemonCard(name, pokemonSrc, description ){
     const liEl = document.createElement("li")
     liEl.setAttribute("class", "card")
 
     const h2El = document.createElement("h2")
     h2El.setAttribute("class", "card--title")
-    h2El.textContent = name
+    name = h2El.textContent = foundPokemons[0].name
 
     const imgEl = document.createElement("img")
-    imgEl.setAttribute("src", src);
-    imgEl.setAttribute("class", "card--img");
-    imgEl.setAttribute("width", "256px");
+    pokemonSrc = imgEl.setAttribute("src", pokemonImg[0])
+    imgEl.setAttribute("class", "card--img")
+    imgEl.setAttribute("width", "256px")
 
     const ulEl = document.createElement("ul")
     ulEl.setAttribute("class", "Card--text")
-    ulEl.textContent = description
+    description = ulEl.textContent = pokemonDescription[1]
 
 
-    liEl.prepend(h2El, imgEl, ulEl)
+    liEl.append(h2El, imgEl, ulEl)
     const cardEl = document.querySelector('.cards')
     cardEl.append(liEl)
 
 
-
-
-
-   
-
-    // const liEl = document.querySelector('.card')
-    // const h2El = document.querySelector('.card--title')
-    // const imgEl = document.querySelector('.card--img')
-    // const ulEl = document.querySelector('.card--text')
-    // liEl.prepend(h2El, imgEl, ulEl)
-
-    // const cardEl = document.querySelector('.cards')
-    // cardEl.append(liEl)
 }
 
-createPokemonCard(  "Pikachu",
-"https://static.wikia.nocookie.net/wii/images/8/89/Pikachu.jpg",
-"Piiiikachuuuuuuu!"
-)
+createPokemonCard( foundPokemons[1].name, pokemonImg[2], pokemonDescription[1] )
+createPokemonCard( foundPokemons[1].name, pokemonImg[2], pokemonDescription[1] )
+createPokemonCard( foundPokemons[1].name, pokemonImg[2], pokemonDescription[1] )
+createPokemonCard( foundPokemons[1].name, pokemonImg[2], pokemonDescription[1] )
+
+
