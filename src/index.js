@@ -19,7 +19,7 @@ const foundPokemons = data.filter(function (data) {
 
 
   const pokemonImg= data.map(function(img){
-      return img.sprites.back_default
+      return img.sprites.front_default
   } )
 
 
@@ -45,7 +45,11 @@ function firstPokemonCard(name, pokemonSrc, description ){
 
     const ulEl = document.createElement("ul")
     ulEl.setAttribute("class", "Card--text")
-    description = ulEl.textContent = pokemonDescription[0]
+    ulEl.style.listStyle = "none"
+    // const pokemonInfo = ["HP", "ATTACK", "DEFENSE", "SPECIAL-ATTACK", "SPECIAL-DEFENSE", "SPEED"]
+
+    description = ulEl.textContent = pokemonDescription[0][0]
+
 
 
     liEl.append(h2El, imgEl, ulEl)
