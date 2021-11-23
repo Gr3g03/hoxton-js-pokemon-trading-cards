@@ -46,7 +46,7 @@ function firstPokemonCard(name, pokemonSrc, description ){
     const ulEl = document.createElement("ul")
     ulEl.setAttribute("class", "Card--text")
     ulEl.style.listStyle = "none"
-    // const pokemonInfo = ["HP", "ATTACK", "DEFENSE", "SPECIAL-ATTACK", "SPECIAL-DEFENSE", "SPEED"]
+   
 
     description = ulEl.textContent = pokemonDescription[0][0]
 
@@ -54,6 +54,7 @@ function firstPokemonCard(name, pokemonSrc, description ){
 
     liEl.append(h2El, imgEl, ulEl)
     const cardEl = document.querySelector('.cards')
+    cardEl.style.listStyle = "none"
     cardEl.append(liEl)
 }
 
